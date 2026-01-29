@@ -12,7 +12,6 @@
 
         <h2>Create Account</h2>
 
-        {{-- Dynamic subtitle --}}
         <p class="sub-text">
             @if(isset($role))
                 Registering as {{ ucfirst($role) }}
@@ -29,12 +28,12 @@
             <input type="password" name="password" placeholder="Password" required>
             <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
 
-            {{-- Hidden role (important for submit) --}}
+            
             @if(isset($role))
                 <input type="hidden" name="role" value="{{ $role }}">
             @endif
 
-            {{-- Visible role dropdown --}}
+            
             <select {{ isset($role) ? 'disabled' : '' }} required>
                 <option value="">Select Role</option>
 

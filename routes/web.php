@@ -8,6 +8,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentCourseController;
 use App\Http\Controllers\TeacherCourseController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\TeacherAIChatController;
+
+
 
 Route::get('/', function () {
     return view('home');
@@ -17,11 +20,13 @@ Route::get('/', function () {
 Route::get('/course-show', [CourseController::class, 'index'])
     ->name('courses.list');
 
-    Route::get('/register', [AuthController::class, 'showRegister'])
+
+Route::get('/register', [AuthController::class, 'showRegister'])
     ->name('register');
 
 Route::post('/register', [AuthController::class, 'register'])
     ->name('register.post');
+
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
@@ -35,7 +40,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/teacher/dashboard', [DashboardController::class, 'teacherDashboard'])
         ->name('teacher.dashboard');
-
 });
 
 
@@ -57,12 +61,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/teacher/courses/{id}', [TeacherCourseController::class, 'destroy'])
         ->name('teacher.courses.delete');
 
-    
     Route::get('/teacher/courses/{id}/students',
         [TeacherCourseController::class, 'students']
     )->name('teacher.courses.students');
 
+    // ✅ TEACHER AI CHAT (FIXED)
+    Route::post('/teacher/ai-chat', [TeacherAIChatController::class, 'reply']);
 });
+
+
+Route::post('/ai-chat', [App\Http\Controllers\AIChatController::class, 'reply'])
+    ->name('ai.chat')
+    ->middleware('auth');
+
 
 Route::get('/test-mail', function () {
     Mail::raw('Test Mail From Laravel', function ($message) {

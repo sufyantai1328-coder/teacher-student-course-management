@@ -1,432 +1,334 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-/* PAGE */
-body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #020617, #0f172a);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
-    color: #e5e7eb;
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#020617,#0f172a);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px;
+    color:#e5e7eb;
 }
 
-/* DASHBOARD */
-.dashboard {
-    width: 100%;
-    max-width: 1100px;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(16px);
-    border-radius: 22px;
-    padding: 32px;
-    box-shadow: 0 30px 90px rgba(0,0,0,0.6);
+.dashboard{
+    width:100%;
+    max-width:1100px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(16px);
+    border-radius:22px;
+    padding:32px;
+    box-shadow:0 30px 90px rgba(0,0,0,.6);
 }
 
-/* HEADER */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
 }
 
-.header h2 {
-    font-size: 30px;
-    color: #38bdf8;
+.header h2{
+    font-size:30px;
+    color:#38bdf8;
 }
 
-/* LOGOUT */
-.logout-btn {
-    background: #ef4444;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 10px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.logout-btn:hover {
-    background: #dc2626;
-}
-
-/* WELCOME */
-.welcome {
-    margin-bottom: 25px;
-    font-size: 16px;
-    opacity: 0.9;
-}
-
-/* CARD */
-.card {
-    background: rgba(255,255,255,0.08);
-    padding: 22px;
-    border-radius: 18px;
-}
-
-.card h3 {
-    margin-bottom: 18px;
-    color: #facc15;
-}
-
-/* COURSES GRID */
-.course-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 18px;
-}
-
-.course-item {
-    background: rgba(255,255,255,0.14);
-    padding: 18px;
-    border-radius: 14px;
-}
-
-/* COURSE INFO */
-.course-title {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.course-teacher {
-    font-size: 13px;
-    color: #38bdf8;
-    margin-top: 6px;
-}
-
-/* ACTIONS */
-.course-actions {
-    margin-top: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-/* ENROLLED BADGE */
-.enrolled-badge {
-    padding: 6px 14px;
-    background: #22c55e;
-    color: #022c22;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-/* ENROLL BUTTON */
-.enroll-btn-sm {
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #020617;
-    cursor: pointer;
-}
-
-.enroll-btn-sm:hover {
-    background: linear-gradient(135deg, #0ea5e9, #0284c7);
-    color: white;
-}
-
-/* UNENROLL BUTTON */
-.unenroll-btn {
-    background: transparent;
-    border: 1.5px solid #ef4444;
-    color: #ef4444;
-    padding: 7px 14px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.unenroll-btn:hover {
-    background: #ef4444;
-    color: white;
-}
-
-/* VIEW BUTTON */
-.view-btn {
-    padding: 8px 14px;
-    background: #38bdf8;
-    color: #020617;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.view-btn:hover {
-    background: #0ea5e9;
-}
-
-/* SUCCESS */
-.success-alert {
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: #022c22;
-    padding: 12px 18px;
-    border-radius: 12px;
-    margin-bottom: 18px;
-    font-weight: 600;
-}
-
-/* INLINE FORM */
-.inline-form {
-    margin: 0;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-    .course-list {
-        grid-template-columns: 1fr;
-    }
-}
-/* ===============================
-   ENROLL / UNENROLL ACTIONS
-================================ */
-
-.enroll-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-/* ENROLL BUTTON */
-.enroll-btn {
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: #022c22;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.25s ease;
-}
-
-.enroll-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(34,197,94,0.45);
-}
-
-/* ENROLLED BADGE */
-.enrolled-badge {
-    padding: 6px 14px;
-    background: #22c55e;
-    color: #022c22;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-/* UNENROLL BUTTON */
-.unenroll-btn {
-    background: transparent;
-    border: 1px solid #ef4444;
-    color: #ef4444;
-    padding: 7px 14px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.unenroll-btn:hover {
-    background: #ef4444;
-    color: #fff;
-}
-/* ===============================
-   COURSE DETAILS PAGE (CENTER FIX)
-================================ */
-
-.course-bg {
-    min-height: 100vh;
-    background: radial-gradient(circle at top, #0f172a, #020617);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-}
-
-.course-wrapper {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    justify-content: center;
-}
-
-.course-card {
-    width: 100%;
-    max-width: 780px;          /* 👈 SAME WIDTH FIX */
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(18px);
-    border-radius: 22px;
-    padding: 42px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.65);
-    animation: fadeUp 0.6s ease;
-
-    /* 👇 CENTER EVERYTHING */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* COURSE IMAGE */
-.course-detail-img {
-    width: 100%;
-    max-width: 520px;          /* 👈 IMAGE SAME SIZE */
-    height: 240px;
-    object-fit: cover;
-    border-radius: 18px;
-    margin-bottom: 26px;
-}
-
-/* TITLE */
-.course-card .course-title {
-    font-size: 34px;
-    font-weight: 600;
-    color: #38bdf8;
-    margin-bottom: 8px;
-}
-
-/* TEACHER */
-.course-card .course-teacher {
-    font-size: 15px;
-    color: #cbd5f5;
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    justify-content: center;
-}
-
-/* DESCRIPTION */
-.course-card .course-desc {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #e5e7eb;
-    margin-bottom: 28px;
-    opacity: 0.95;
-    max-width: 640px;          /* 👈 TEXT WIDTH CONTROL */
-}
-
-/* BACK LINK */
-.course-card .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #a5b4fc;
-    text-decoration: none;
-    transition: all 0.25s ease;
-}
-
-.course-card .back-link:hover {
-    color: #38bdf8;
-    transform: translateX(-4px);
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    .course-card {
-        padding: 26px;
-    }
-
-    .course-card .course-title {
-        font-size: 26px;
-    }
-
-    .course-detail-img {
-        height: 200px;
-    }
-}
-/* ===============================
-   NOTIFICATIONS FIX (STUDENT)
-================================ */
-
-.notifications-card {
-    margin-bottom: 26px;
-}
-
-/* fixed height + inner scroll */
-.notifications-scroll {
-    max-height: 260px;     /* 👈 mam ke issue ka core fix */
-    overflow-y: auto;
-    padding-right: 6px;
-}
-
-/* individual notification */
-.notification-item {
-    padding: 12px;
-    margin-bottom: 10px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 12px;
-}
-
-/* smooth scrollbar */
-.notifications-scroll::-webkit-scrollbar {
-    width: 6px;
-}
-.notifications-scroll::-webkit-scrollbar-thumb {
-    background: #38bdf8;
-    border-radius: 10px;
-}
-/* NOTIFICATION BADGE */
-.notify-badge {
-    position:absolute;
-    top:-8px;
-    right:-10px;
+.logout-btn{
     background:#ef4444;
-    color:white;
-    font-size:11px;
-    padding:2px 6px;
-    border-radius:50%;
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.logout-btn:hover{background:#dc2626;}
+
+.welcome{
+    margin-bottom:25px;
+    font-size:16px;
+    opacity:.9;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    padding:22px;
+    border-radius:18px;
+    margin-bottom:22px;
+}
+
+.card h3{
+    margin-bottom:18px;
+    color:#facc15;
+}
+
+.course-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:18px;
+}
+
+.course-item{
+    background:rgba(255,255,255,0.14);
+    padding:18px;
+    border-radius:14px;
+}
+
+.course-title{
+    font-size:16px;
     font-weight:600;
 }
 
-/* COURSE IMAGE */
-.course-img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 12px;
+.course-teacher{
+    font-size:13px;
+    color:#38bdf8;
+    margin-top:6px;
 }
 
-/* NOTIFICATION SCROLL FIX */
-.notifications-card {
-    max-height: 300px;
+.course-actions{
+    margin-top:14px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
-.notifications-scroll {
-    max-height: 220px;
-    overflow-y: auto;
-    padding-right: 6px;
+.enrolled-badge{
+    padding:6px 14px;
+    background:#22c55e;
+    color:#022c22;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
 }
 
-.notification-item {
-    padding: 12px;
-    margin-bottom: 10px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 12px;
+.enroll-btn-sm{
+    background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+    border:none;
+    padding:8px 16px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:600;
+    color:#020617;
+    cursor:pointer;
 }
 
-/* SMOOTH SCROLLBAR */
-.notifications-scroll::-webkit-scrollbar {
-    width: 6px;
+.enroll-btn-sm:hover{
+    background:linear-gradient(135deg,#0ea5e9,#0284c7);
+    color:#fff;
 }
-.notifications-scroll::-webkit-scrollbar-thumb {
-    background: #38bdf8;
-    border-radius: 10px;
+
+.unenroll-btn{
+    background:transparent;
+    border:1.5px solid #ef4444;
+    color:#ef4444;
+    padding:7px 14px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.unenroll-btn:hover{
+    background:#ef4444;
+    color:#fff;
+}
+
+.view-btn{
+    padding:8px 14px;
+    background:#38bdf8;
+    color:#020617;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.view-btn:hover{background:#0ea5e9;}
+
+.notifications-scroll{
+    max-height:260px;
+    overflow-y:auto;
+}
+
+.notification-item{
+    padding:12px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.08);
+    border-radius:12px;
+}
+
+
+#ai-chat{
+    margin-top:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    border-radius:18px;
+    padding:18px;
+}
+
+#ai-header{
+    font-size:18px;
+    font-weight:600;
+    color:#facc15;
+    margin-bottom:10px;
+}
+
+#ai-messages{
+    height:140px;
+    overflow-y:auto;
+    background:rgba(255,255,255,0.06);
+    border-radius:12px;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+.ai-msg{
+    max-width:70%;
+    padding:6px 10px;
+    border-radius:12px;
+    font-size:13px;
+    margin-bottom:6px;
+    background:#eef2ff;
+    color:#020617;
+}
+
+.ai-msg.user{
+    margin-left:auto;
+    background:#dcfce7;
+    color:#022c22;
+    text-align:right;
+}
+
+#ai-input{
+    display:flex;
+    gap:8px;
+}
+
+#ai-input input{
+    flex:1;
+    padding:8px 10px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    font-size:13px;
+}
+
+#ai-input button{
+    padding:8px 14px;
+    border-radius:10px;
+    background:#4f46e5;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+}
+
+#ai-input button:hover{background:#4338ca;}
+
+@media(max-width:768px){
+    #ai-chat{display:none;}
+}
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 25px;
+    align-items: start;
+}
+
+.dashboard-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.notifications-card{
+    margin-bottom: 30px;
+}
+
+
+.dashboard-main > .card:last-child{
+    margin-top: 0;
+}
+
+#ai-chat{
+    margin-top: 600px;   
+}
+/* 🔔 NOTIFICATIONS FULL WIDTH (END TO END) */
+.notifications-card{
+    grid-column: 1 / -1;   /* left + right dono column cover */
+}
+/* ❌ NOTIFICATION CLOSE BUTTON */
+.notification-item{
+    position: relative;
+    padding-right: 40px;
+}
+
+.notif-close{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #f87171;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.notif-close:hover{
+    color: #ef4444;
+}
+
+/* 🔔 NOTIFICATIONS FULL WIDTH (END TO END) */
+.notifications-card{
+    grid-column: 1 / -1;   /* left + right dono column cover */
+}
+
+/* ❌ NOTIFICATION CLOSE BUTTON */
+.notification-item{
+    position: relative;
+    padding-right: 40px;
+}
+
+.notif-close{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #f87171;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.notif-close:hover{
+    color: #ef4444;
+}
+
+/* 🔔 NOTIFICATIONS FULL WIDTH (END TO END) */
+.notifications-card{
+    grid-column: 1 / -1;   /* left + right dono column cover */
+}
+
+/* ❌ NOTIFICATION CLOSE BUTTON */
+.notification-item{
+    position: relative;
+    padding-right: 40px;
+}
+
+.notif-close{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #f87171;
+    font-size: 16px;
+    cursor: pointer;
+}
+.notifications-card{
+    grid-column: 1 / -1;
 }
